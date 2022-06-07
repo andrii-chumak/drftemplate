@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import User
+
 
 class CoxitWorker(models.Model):
     first_name = models.CharField(max_length=40)
@@ -7,6 +9,7 @@ class CoxitWorker(models.Model):
     birthday = models.DateField()
     salary = models.FloatField()
     favorite_joke = models.TextField(null=True, blank=True)
+    linked_user = models.OneToOneField(User, on_delete=models.CASCADE)
     
     class Meta:
         db_table = "coxit_workers"

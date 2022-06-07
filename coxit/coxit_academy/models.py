@@ -2,6 +2,8 @@ from pyexpat import model
 from django.db import models
 from coxit_staff.models import CoxitWorker
 
+
+
 class AcademyStudent(models.Model):
     first_name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=40)
